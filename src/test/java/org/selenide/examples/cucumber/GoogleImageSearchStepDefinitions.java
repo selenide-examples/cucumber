@@ -1,4 +1,4 @@
-package org.selenide.examples.jbehave;
+package org.selenide.examples.cucumber;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
