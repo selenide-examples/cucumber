@@ -1,4 +1,4 @@
-package org.selenide.examples.jbehave;
+package org.selenide.examples.cucumber;
 
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
