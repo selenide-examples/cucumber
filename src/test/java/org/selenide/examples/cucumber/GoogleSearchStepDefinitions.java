@@ -25,7 +25,7 @@ public class GoogleSearchStepDefinitions {
 
   @Then("top (\\d+) matches should be shown")
   public void topTenMatchesShouldBeShown(int resultsCount) {
-    $$("#res li.g").shouldHave(size(resultsCount));
-    $("#res li.g").shouldHave(text(keyword + ".org"));
+    $$("#res .g").shouldHave(size(resultsCount));
+    $("#res .g").shouldHave(text(keyword + ".org"));
   }
 }
