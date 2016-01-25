@@ -14,7 +14,7 @@ public class GoogleSearchStepDefinitions {
   
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    open("http://google.com/en");
+    open("https://google.com/ncr");
   }
 
   @When("a keyword (.*) is entered in input field")
