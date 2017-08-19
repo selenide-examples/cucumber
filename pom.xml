@@ -7,7 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   
   <build>
-    <defaultGoal>dependency:copy-dependencies</defaultGoal>
+    <defaultGoal>dependency:copy-dependencies test</defaultGoal>
   </build>
   
   <dependencies>
@@ -32,7 +32,7 @@
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
-      <version>4.2</version>
+      <version>4.5.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -42,7 +42,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.19.1</version>
+        <version>2.20</version>
       </plugin>
     </plugins>
   </reporting>
