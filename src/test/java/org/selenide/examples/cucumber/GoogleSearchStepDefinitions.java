@@ -27,11 +27,11 @@ public class GoogleSearchStepDefinitions {
 
   @Then("top (\\d+) matches should be shown")
   public void topTenMatchesShouldBeShown(int resultsCount) {
-    $$("#res .g").shouldHave(size(resultsCount));
+    $$("#ires .g").shouldHave(size(resultsCount));
   }
 
   @Then("the first one should contain (\\d+)")
   public void theFirstOneShouldContainKeyword(String expectedText) {
-    $("#res .g").shouldHave(text(expectedText));
+    $("#ires .g").shouldHave(text(expectedText));
   }
 }
