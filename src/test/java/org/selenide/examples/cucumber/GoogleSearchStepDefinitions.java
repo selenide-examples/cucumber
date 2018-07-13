@@ -6,7 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,12 +25,12 @@ public class GoogleSearchStepDefinitions {
     $(By.name("q")).val(keyword).pressEnter();
   }
 
-  @Then("top (\\d+) matches should be shown")
+  @Then("at least top (\\d+) matches should be shown")
   public void topTenMatchesShouldBeShown(int resultsCount) {
-    $$("#ires .g").shouldHave(size(resultsCount));
+    $$("#ires .g").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 
-  @Then("the first one should contain (\\d+)")
+  @Then("the first one should contain (.+)")
   public void theFirstOneShouldContainKeyword(String expectedText) {
     $("#ires .g").shouldHave(text(expectedText));
   }
