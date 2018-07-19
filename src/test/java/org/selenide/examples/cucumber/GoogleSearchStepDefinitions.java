@@ -16,6 +16,8 @@ public class GoogleSearchStepDefinitions {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
     Configuration.browser = "chrome";
+    Configuration.startMaximized = false;
+    Configuration.reportsFolder = "target/surefire-reports";
     open("https://google.com/ncr");
   }
 
