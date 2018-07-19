@@ -15,7 +15,7 @@ public class GoogleSearchStepDefinitions {
   
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    Configuration.browser = "chrome";
+    Configuration.reportsFolder = "target/surefire-reports";
     open("https://google.com/ncr");
   }
 
@@ -27,11 +27,11 @@ public class GoogleSearchStepDefinitions {
 
   @Then("at least top (\\d+) matches should be shown")
   public void topTenMatchesShouldBeShown(int resultsCount) {
-    $$("#ires .g").shouldHave(sizeGreaterThanOrEqual(resultsCount));
+    $$("#res .g").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 
   @Then("the first one should contain (.+)")
   public void theFirstOneShouldContainKeyword(String expectedText) {
-    $("#ires .g").shouldHave(text(expectedText));
+    $("#res .g").shouldHave(text(expectedText));
   }
 }
