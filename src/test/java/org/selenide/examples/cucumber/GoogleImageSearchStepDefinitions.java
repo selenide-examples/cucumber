@@ -1,7 +1,7 @@
 package org.selenide.examples.cucumber;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
