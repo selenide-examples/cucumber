@@ -15,7 +15,6 @@ public class GoogleTest {
 
   @Before
   public void setUp() {
-    Configuration.startMaximized = false;
     Configuration.reportsFolder = "target/surefire-reports";
   }
 }
