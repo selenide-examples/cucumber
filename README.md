@@ -18,3 +18,6 @@ mvn test
 
 
 _Feel free to share your feedback!_
+
+
+[![Build Status](https://travis-ci.org/selenide-examples/cucumber.png)](https://travis-ci.org/selenide-examples/cucumber)
