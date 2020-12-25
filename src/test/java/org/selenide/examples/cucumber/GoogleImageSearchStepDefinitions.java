@@ -26,7 +26,6 @@ public class GoogleImageSearchStepDefinitions {
 
   @Then("at least top {int} matching images should be shown")
   public void topTenMatchedImagesShouldBeShown(int resultsCount) {
-    $$(".rg_di.rg_el").shouldHave(sizeGreaterThanOrEqual(resultsCount));
-    $(".rg_di.rg_el").find("img.rg_i").shouldHave(attribute("alt", "Image result for " + keyword));
+    $$(".rg_i").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 }
