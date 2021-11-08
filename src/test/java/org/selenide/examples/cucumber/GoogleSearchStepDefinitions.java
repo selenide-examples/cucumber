@@ -7,14 +7,27 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
+import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.hasWebDriverStarted;
 
 public class GoogleSearchStepDefinitions {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    Configuration.reportsFolder = "target/surefire-reports";
-    open("https://google.com/ncr");
+    if (hasWebDriverStarted()) {
+      open("https://google.com/ncr");
+    }
+    else {
+      Configuration.reportsFolder = "target/surefire-reports";
+      Configuration.headless = false;
+      open("https://google.com/ncr");
+      $(byText("I agree")).click();
+      $(byText("I agree")).should(disappear);
+    }
   }
 
   @When("a keyword {string} is entered in input field")
