@@ -9,23 +9,22 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.hasWebDriverStarted;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class GoogleSearchStepDefinitions {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    if (hasWebDriverStarted()) {
-      open("https://google.com/ncr");
-    }
-    else {
-      Configuration.reportsFolder = "target/surefire-reports";
-      Configuration.headless = false;
-      open("https://google.com/ncr");
-      $(byText("I agree")).click();
+    Configuration.reportsFolder = "target/surefire-reports";
+    Configuration.headless = false;
+    open("https://google.com/ncr");
+    sleep(500);
+    if ($(byText("I agree")).isDisplayed()) {
+      $(byText("I agree")).shouldBe(visible).click();
       $(byText("I agree")).should(disappear);
     }
   }
