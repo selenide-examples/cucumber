@@ -14,10 +14,9 @@ mvn test
 ### How to add project to IDEA
 
 1. Run the following command to fetch dependencies: `mvn`
-2. Add module `cucumber.iml` to your Intellij IDEA.
+2. Import project to your Intellij IDEA.
 
 
 _Feel free to share your feedback!_
 
-
-[![Build Status](https://travis-ci.org/selenide-examples/cucumber.png)](https://travis-ci.org/selenide-examples/cucumber)
+[![Build](https://github.com/selenide-examples/cucumber/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/selenide-examples/cucumber/actions/workflows/build.yml)
