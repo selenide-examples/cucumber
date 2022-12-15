@@ -14,7 +14,7 @@
   </properties>
 
   <build>
-    <defaultGoal>dependency:copy-dependencies test</defaultGoal>
+    <defaultGoal>test</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

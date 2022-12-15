@@ -21,8 +21,6 @@ import io.cucumber.java.en.When;
 public class GoogleSearchStepDefinitions {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.headless = false;
     open("https://google.com/ncr");
     sleep(500);
     if ($(byText("Accept all")).isDisplayed()) {
