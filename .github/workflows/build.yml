@@ -1,4 +1,4 @@
-name: Build the project
+name: Run tests
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  compile-java-code:
+  run-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,4 +25,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
       - name: Build
-        run: mvn clean test
+        run: mvn -B clean test
