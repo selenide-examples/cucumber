@@ -7,8 +7,8 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cucumberVersion>7.14.0</cucumberVersion>
@@ -56,8 +56,8 @@
     </dependency>
     <dependency>
       <groupId>com.codeborne</groupId>
-      <artifactId>selenide</artifactId>
-      <version>6.19.1</version>
+      <artifactId>selenide-junit4</artifactId>
+      <version>7.0.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
