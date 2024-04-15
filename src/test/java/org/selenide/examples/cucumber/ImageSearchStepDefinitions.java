@@ -1,25 +1,20 @@
 package org.selenide.examples.cucumber;
 
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
-import static com.codeborne.selenide.Condition.disappear;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-import org.openqa.selenium.By;
-
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-public class GoogleImageSearchStepDefinitions {
+public class ImageSearchStepDefinitions {
   @When("click {string} link")
   public void chooseImagesAsSearchTarget(String linkText) {
-    $(byText(linkText)).click();
-    if ($(byText("Accept all")).isDisplayed()) {
-      $(byText("Accept all")).shouldBe(visible).click();
-      $(byText("Accept all")).should(disappear);
-    }
+    $("[data-testid=\"tab-label-images\"]")
+      .shouldHave(text(linkText))
+      .click();
   }
 
   @When("enter a keyword {string} in input field")
@@ -29,6 +24,6 @@ public class GoogleImageSearchStepDefinitions {
 
   @Then("at least top {int} matching images should be shown")
   public void topTenMatchedImagesShouldBeShown(int resultsCount) {
-    $$(".rg_i").shouldHave(sizeGreaterThanOrEqual(resultsCount));
+    $$("[data-testid=\"zci-images\"] .tile--img").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 }
