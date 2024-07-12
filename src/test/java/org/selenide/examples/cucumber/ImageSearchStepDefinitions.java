@@ -6,13 +6,15 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ImageSearchStepDefinitions {
   @When("click {string} link")
   public void chooseImagesAsSearchTarget(String linkText) {
-    $("[data-testid=\"tab-label-images\"]")
+    $("[data-testid=\"duckbar\"]")
+      .find(byText("Images"))
       .shouldHave(text(linkText))
       .click();
   }
