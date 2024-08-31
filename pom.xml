@@ -11,6 +11,7 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <surefireVersion>3.5.0</surefireVersion>
     <cucumberVersion>7.18.1</cucumberVersion>
   </properties>
 
@@ -20,7 +21,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>${surefireVersion}</version>
         <configuration>
           <systemPropertyVariables>
             <selenide.downloadsFolder>target/downloads</selenide.downloadsFolder>
@@ -67,7 +68,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>${surefireVersion}</version>
       </plugin>
     </plugins>
   </reporting>
