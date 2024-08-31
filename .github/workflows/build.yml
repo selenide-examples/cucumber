@@ -17,13 +17,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-      - name: Maven cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven
-          restore-keys: |
-            ${{ runner.os }}-maven
       - name: Build
         run: mvn -B clean surefire-report:report -Dselenide.headless=true
       - name: Upload test artifacts
