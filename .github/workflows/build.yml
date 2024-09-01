@@ -18,16 +18,14 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: Build
-        run: mvn -B clean surefire-report:report -Dselenide.headless=true
+        run: mvn -B clean test -Dselenide.headless=true; mvn -B org.apache.maven.plugins:maven-surefire-report-plugin:3.4.0:report-only -e
       - name: Upload test artifacts
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: test-report
           path: |
-            target/surefire-reports
-            target/downloads
-            target/site
+            target
 
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
