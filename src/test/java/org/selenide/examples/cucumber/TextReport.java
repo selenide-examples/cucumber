@@ -14,6 +14,8 @@ public class TextReport {
 
   @BeforeAll
   public static void beforeAllTests() {
+    Configuration.reportsFolder = "target/surefire-reports";
+    Configuration.downloadsFolder = "target/downloads";
     Configuration.browserCapabilities = new ChromeOptions()
       .addArguments("--disable-blink-features=AutomationControlled");
   }
