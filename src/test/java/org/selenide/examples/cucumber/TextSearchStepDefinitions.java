@@ -25,11 +25,11 @@ public class TextSearchStepDefinitions {
 
   @Then("at least top {int} matches should be shown")
   public void topTenMatchesShouldBeShown(int resultsCount) {
-    $$("[data-testid=\"result\"]").shouldHave(sizeGreaterThanOrEqual(resultsCount));
+    $$("[data-testid=\"mainline\"] li").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 
   @Then("the first one should contain {string}")
   public void theFirstOneShouldContainKeyword(String expectedText) {
-    $("[data-testid=\"result\"]").shouldHave(text(expectedText));
+    $("[data-testid=\"mainline\"] li").shouldHave(text(expectedText));
   }
 }
