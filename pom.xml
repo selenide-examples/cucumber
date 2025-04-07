@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <surefireVersion>3.5.3</surefireVersion>
-    <cucumberVersion>7.21.1</cucumberVersion>
+    <cucumberVersion>7.22.0</cucumberVersion>
   </properties>
 
   <build>
