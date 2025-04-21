@@ -13,6 +13,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <surefireVersion>3.5.3</surefireVersion>
     <cucumberVersion>7.22.0</cucumberVersion>
+    <selenideVersion>7.9.0</selenideVersion>
   </properties>
 
   <build>
@@ -58,13 +59,13 @@
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide-junit4</artifactId>
-      <version>7.9.0</version>
+      <version>${selenideVersion}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide-video-recorder</artifactId>
-      <version>7.9.0</version>
+      <version>${selenideVersion}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
