@@ -26,6 +26,6 @@ public class ImageSearchStepDefinitions {
 
   @Then("at least top {int} matching images should be shown")
   public void topTenMatchedImagesShouldBeShown(int resultsCount) {
-    $$("[data-testid=\"zci-images\"] .tile--img").shouldHave(sizeGreaterThanOrEqual(resultsCount));
+    $$("[data-testid=\"zci-images\"] img").shouldHave(sizeGreaterThanOrEqual(resultsCount));
   }
 }
