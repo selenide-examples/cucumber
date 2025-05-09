@@ -13,7 +13,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <surefireVersion>3.5.3</surefireVersion>
     <cucumberVersion>7.22.1</cucumberVersion>
-    <selenideVersion>7.9.1</selenideVersion>
+    <selenideVersion>7.9.2</selenideVersion>
   </properties>
 
   <build>
