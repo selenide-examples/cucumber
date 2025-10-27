@@ -25,7 +25,7 @@ jobs:
         if: always()
         run: mvn -B -e org.apache.maven.plugins:maven-surefire-report-plugin:3.4.0:report-only
       - name: Upload test artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: test-report
