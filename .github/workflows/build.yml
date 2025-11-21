@@ -17,6 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
+      - name: Setup FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+      - run: ffmpeg -version
       - name: Build
         uses: coactions/setup-xvfb@v1
         with:
