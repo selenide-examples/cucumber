@@ -18,8 +18,9 @@ jobs:
           java-version: '25'
           cache: 'maven'
       - name: Setup FFmpeg
-        uses: FedericoCarboni/setup-ffmpeg@v3
-      - run: ffmpeg -version
+        run: |
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
       - name: Build
         uses: coactions/setup-xvfb@v1
         with:

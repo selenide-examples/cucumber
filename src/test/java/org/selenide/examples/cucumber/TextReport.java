@@ -11,6 +11,9 @@ import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
+import java.nio.file.Path;
+import java.util.Optional;
+
 public class TextReport {
   private final SimpleReport report = new SimpleReport();
   private VideoRecorder videoRecorder;
@@ -35,8 +38,8 @@ public class TextReport {
   @After
   public void afterTest(Scenario scenario) {
     if (scenario.isFailed()) {
-      videoRecorder.finish();
-      scenario.log("Finished " + scenario.getName() + ", video: " + videoRecorder.videoUrl());
+      Optional<Path> video = videoRecorder.finish();
+      scenario.log("Finished " + scenario.getName() + ", video: " + video.map(path -> path.toUri().toString()));
     }
     else {
       videoRecorder.cancel();
