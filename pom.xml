@@ -11,7 +11,7 @@
     <maven.compiler.target>25</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <surefireVersion>3.6.0</surefireVersion>
+    <surefireVersion>3.6.1</surefireVersion>
     <cucumberVersion>8.0.4</cucumberVersion>
     <selenideVersion>7.19.0</selenideVersion>
   </properties>
